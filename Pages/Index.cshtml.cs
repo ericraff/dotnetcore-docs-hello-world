@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Runtime.InteropServices;
-using System.Secuirity.Claims;
+using System.Security.Claims;
 
 namespace dotnetcoresample.Pages;
 
