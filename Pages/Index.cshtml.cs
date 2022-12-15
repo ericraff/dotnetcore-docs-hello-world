@@ -18,5 +18,9 @@ public class IndexModel : PageModel
 
     public void OnGet()
     {        
+    ClaimsPrincipal cp = ClaimsPrincipal.Current;
+    string userName = cp.FindFirst(ClaimTypes.WindowsAccountName).Value;
+    ViewBag.Message = String.Format("Hello {0}!", userName);
+    return View();
     }
 }
