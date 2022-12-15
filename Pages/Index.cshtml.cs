@@ -28,7 +28,7 @@ public class IndexModel : PageModel
     public void OnGet()
     {        
     ClaimsPrincipal cp = ClaimsPrincipal.Current;
-    string userName = cp.FindFirst(ClaimTypes.WindowsAccountName).Value;
+    string userName = cp?.FindFirst(ClaimTypes.WindowsAccountName).Value;
     Message = String.Format("Hello {0}!", userName);
 
     }
