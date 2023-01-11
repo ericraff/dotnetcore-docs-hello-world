@@ -27,13 +27,13 @@ public class IndexModel : PageModel
  
 
     public void OnGet()
-    {        
-    ClaimsPrincipal cp = ClaimsPrincipal.Current;
+    {
+        ClaimsPrincipal cp = ClaimsPrincipal.Current;
 
-    Claims = cp.Claims.ToList();
+        Claims = cp?.Claims.ToList() ?? new List<Claim>();
 
-    string userName = cp?.FindFirst(ClaimTypes.WindowsAccountName).Value;
-    Message = String.Format("Hello {0}!", userName);
+        string userName = cp?.FindFirst(ClaimTypes.WindowsAccountName).Value;
+        Message = String.Format("Hello {0}!", userName);
 
     }
 }
