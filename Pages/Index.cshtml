@@ -14,4 +14,11 @@
 <h3 class="clearfix">@Model.Message</h3>
 </div>
 
-has context menu
+<H1>List of claims</H1>
+@foreach (var item in @Model.Claims)
+{
+    <hr />
+    <div>Subject: @item.Subject</div>
+    <div>Value: @item.Value</div>
+}
+

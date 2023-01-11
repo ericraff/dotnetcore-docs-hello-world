@@ -12,6 +12,7 @@ namespace dotnetcoresample.Pages;
 public class IndexModel : PageModel
 {
     public string Message { get; set; } = "Initial value";
+    public List<Claim> Claims { get; set; } = new List<Claim>();
     public string OSVersion { get { return RuntimeInformation.OSDescription; }  }
 
     private readonly ILogger<IndexModel> _logger;
@@ -28,6 +29,9 @@ public class IndexModel : PageModel
     public void OnGet()
     {        
     ClaimsPrincipal cp = ClaimsPrincipal.Current;
+
+    Claims = cp.Claims.ToList();
+
     string userName = cp?.FindFirst(ClaimTypes.WindowsAccountName).Value;
     Message = String.Format("Hello {0}!", userName);
 
