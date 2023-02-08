@@ -4,21 +4,18 @@
     ViewData["Title"] = "Home page";
 }
 
- 
 
 <div class="text-center">
 <h1 class="display-4">Hello World from .Net 6</h1>
 <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 <hr />
-<div>Host operating system: @Model.OSVersion</div>
-<h3 class="clearfix">@Model.Message</h3>
 </div>
 
 <H1>List of claims</H1>
 @foreach (var item in @Model.Claims)
 {
     <hr />
-    <div>Subject: @item.Subject</div>
+    <div>Type: @item.Type</div>
     <div>Value: @item.Value</div>
 }
 
